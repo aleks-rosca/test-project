@@ -2,4 +2,9 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/test-project/test-project', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/test-project/test-project']
+  args: ['push', 'gcr.io/test-project/test-project'] 
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['beta', 'run', 'deploy', 'test-project', '--region=europe-west1', '--platform=managed', '--image=gcr.io/test-project/test-project:latest']
+optionis:
+  sourceProvenanceHash: ['SHA256']
+  
