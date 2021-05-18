@@ -5,6 +5,6 @@ steps:
   args: ['push', 'gcr.io/test-project/test-project'] 
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['beta', 'run', 'deploy', 'test-project', '--region=europe-west1', '--platform=managed', '--image=gcr.io/test-project/test-project:latest']
-options:
-  sourceProvenanceHash: ['SHA256']
+# options:
+#   sourceProvenanceHash: ['SHA256']
   
