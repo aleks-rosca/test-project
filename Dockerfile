@@ -11,8 +11,7 @@ RUN set -ex && \
     adduser node root && \
     chmod g+w /app && \
     apk add --update --no-cache \
-      g++ make python \
-      openjdk8-jre
+      g++ make python
 
 # Copy application dependency manifests to the container image.
 # A wildcard is used to ensure both package.json AND package-lock.json are copied.
