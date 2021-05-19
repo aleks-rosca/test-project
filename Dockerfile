@@ -7,12 +7,6 @@ ENV PORT=8080
 # Create and change to the app directory.
 WORKDIR /usr/src/app
 
-RUN set -ex && \
-    adduser node root && \
-    chmod g+w /app && \
-    apk add --update --no-cache \
-      g++ make python
-
 # Copy application dependency manifests to the container image.
 # A wildcard is used to ensure both package.json AND package-lock.json are copied.
 # Copying this separately prevents re-running npm install on every code change.
